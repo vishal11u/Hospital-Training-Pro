@@ -95,15 +95,6 @@ function PreLeftModel({
                     label="Local"
                 />
             </div>
-            {/* <div>
-                <PreTestQue
-                    questions={assesQuetions}
-                    selectedOptions={selectedOptions}
-                    handleOptionSelect={handleOptionSelect}
-                    language={language}
-                    preAssesmentList={preAssesmentList}
-                />
-            </div> */}
             <div className="w-full space-y-4 px-3">
                 {questions.length > 0 &&
                     questions.map((question, qIndex) => (

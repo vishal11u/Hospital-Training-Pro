@@ -66,7 +66,6 @@ function PreAssesmentTest() {
       }
     });
   };
-  console.log("preAssesmentList", preAssesmentList);
 
   const handleSubmit = useCallback(async () => {
     const unansweredQuestions = preAssesmentList.filter(
@@ -97,17 +96,6 @@ function PreAssesmentTest() {
             ? true
             : false,
       };
-
-      // isModulePostAss: false;
-      // isModulePreAss: true;
-      // moduleName: "Nurse Module Onee";
-      // modulePostAssId: null;
-      // modulePostAssName: null;
-      // modulePreAssId: 35;
-      // modulePreAssName: "Assessment Nurse One";
-      // moduleid: 51;
-      // status: "In-Progress";
-      console.log("Payload:", payload);
 
       saveCoursePreAssessment(payload)
         .then((res) => {

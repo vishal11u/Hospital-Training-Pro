@@ -10,7 +10,7 @@ export default function RunTimeCourseAssesmentQuetionCard({
     setQuestionData,
     handleRemoveQuestion,
 }) {
-    console.log("ddccddc", questionData);
+    // console.log("ddccddc", questionData);
     const [selectedCardIndex, setSelectedCardIndex] = useState(null);
 
     const handleDragStart = (index) => {
@@ -91,21 +91,21 @@ export default function RunTimeCourseAssesmentQuetionCard({
                                         </div>
                                     ))}
                                     {/* {Object.keys(question.assessmentEnglish.answerChoices).map((key, optionIndex) => (
-                                                <div key={optionIndex} className='flex items-center gap-x-4'>
-                                                    <div className='flex items-center gap-x-3 border border-[#CCCCCC] rounded-md p-2 mt-2'>
-                                                        <div className=''>
-                                                            {question.coorectChoices?.includes(optionIndex + 1) ? (
-                                                                <img className='w-5' src={correctAnswerIcon} alt='correct' />
-                                                            ) : (
-                                                                <img className='w-5' src={EmptyOptions} alt='empty' />
-                                                            )}
-                                                        </div>
-                                                        <p className='text-[12px] font-normal text-[#525252]'>
-                                                            {question.assessmentEnglish.answerChoices[key]}
-                                                        </p>
-                                                    </div>
+                                        <div key={optionIndex} className='flex items-center gap-x-4'>
+                                            <div className='flex items-center gap-x-3 border border-[#CCCCCC] rounded-md p-2 mt-2'>
+                                                <div className=''>
+                                                    {question.coorectChoices?.includes(optionIndex + 1) ? (
+                                                        <img className='w-5' src={correctAnswerIcon} alt='correct' />
+                                                    ) : (
+                                                        <img className='w-5' src={EmptyOptions} alt='empty' />
+                                                    )}
                                                 </div>
-                                            ))} */}
+                                                <p className='text-[12px] font-normal text-[#525252]'>
+                                                    {question.assessmentEnglish.answerChoices[key]}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))} */}
                                 </div>
                             </div>
                         </div>

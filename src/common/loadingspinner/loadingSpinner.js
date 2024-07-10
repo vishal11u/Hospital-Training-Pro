@@ -8,7 +8,7 @@ const LoadingSpinner = () => {
     <div className="loading-container">
       {arry.map((j, i) => (
         <span
-        id="span"
+          id="span"
           className="loading-dot"
           style={{
             animationDelay: `${i * 100}ms`,

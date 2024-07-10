@@ -29,20 +29,28 @@ import Course_Master from "../masters/coursemaster/CourseMaster";
 import AssesmentMasterMainPage from "../masters/assesmentmaster/AssesmentMasterMainPage";
 import { MdModelTraining } from "react-icons/md";
 import { RiMastercardLine } from "react-icons/ri";
+import { FcAbout } from "react-icons/fc";
 import Assign_Training from "../masters/assigntraining/AssignTraining";
 import RunTimeCourse from "../masters/runtimecoursescreen/components/runtimecourse/RunTimeCourse";
+import RunTimeTopicCourses from "../runtimetopic/components/RunTimeTopicCourses";
 
 const data = [
   {
     id: 1,
     name: "Training Module",
-    icon: <MdModelTraining size={27} color="#1e90ff" />,
+    icon: <MdModelTraining size={26} color="#1e90ff" />,
     path: "/",
   },
   {
     id: 1,
+    name: "RunTime Topic",
+    icon: <FcAbout size={25} color="#1e90ff" />,
+    path: "/runtimetopiccourse",
+  },
+  {
+    id: 1,
     name: "Masters",
-    icon: <RiMastercardLine size={27} color="#1e90ff" />,
+    icon: <RiMastercardLine size={26} color="#1e90ff" />,
     subMenus: [
       {
         id: 2,
@@ -300,6 +308,7 @@ export default function Training_Dash_Drawer() {
           <Route path="/coursemaster" element={<Course_Master />} />
           <Route path="/assigntraining" element={<Assign_Training />} />
           <Route path="/runtimecourse" element={<RunTimeCourse />} />
+          <Route path="/runtimetopiccourse" element={<RunTimeTopicCourses />} />
         </Routes>
       </Box>
     </Box>

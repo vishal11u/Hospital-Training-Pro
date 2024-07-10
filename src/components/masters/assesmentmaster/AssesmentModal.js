@@ -94,7 +94,12 @@ function Assesment_Modal({
                                         <div className='flex items-center justify-between'>
                                             <div className='pt-1 -mb-1.5'>
                                                 {languages?.map((language) => (
-                                                    <CheckBoxField control={control} name={language?.language} defaultValue={language?.isDefault} label={language?.description} />
+                                                    <CheckBoxField
+                                                        control={control}
+                                                        name={language?.language}
+                                                        defaultValue={language?.isDefault}
+                                                        label={language?.description}
+                                                    />
                                                 ))}
                                             </div>
                                             <div className=''>

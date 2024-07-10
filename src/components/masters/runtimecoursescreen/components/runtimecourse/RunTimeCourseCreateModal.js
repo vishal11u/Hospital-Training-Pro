@@ -180,10 +180,7 @@ function RunTimeCourseCreateModal({
             setValue('lTwoOptions', Array(4).fill({ option: "" }));
             setValue('lThreeQuestion', "");
             setValue('lThreeOptions', Array(4).fill({ option: "" }));
-            setValue('isActive', false)
-            // reset({
-            //     assessmentName: values.assessmentName,
-            // });
+            setValue('isActive', false);
         } else {
             toast.error("Please complete all fields");
         }
@@ -494,7 +491,7 @@ function RunTimeCourseCreateModal({
                                             label={language}
                                             // value={language}
                                             // defaultValue={language}
-                                            onChange={(e) => onCheckboxChange(language, e.target.checked)}
+                                            // onChange={(e) => onCheckboxChange(language, e.target.checked)}
                                             disabled={
                                                 (language === "Hindi" &&
                                                     (!watchedEnglishFields[0] ||
@@ -578,7 +575,7 @@ function RunTimeCourseCreateModal({
                         <div className='flex gap-x-3 pt-1.5 -mt-1'>
                             <div className='w-full lg:w-[65%] max-h-[57vh]' style={{ scrollbarWidth: 'thin' }}>
                                 <div className=' '>
-                                    <div className='border border-[#CCCCCC] rounded-md shadow px-3 pt-2'>
+                                    <div className='border border-[#CCCCCC] rounded-md shado px-3 pt-2'>
                                         <div className='flex flex-col lg:flex-row items-center justify-between mt-1'>
                                             <div className=''>
                                                 <InputField

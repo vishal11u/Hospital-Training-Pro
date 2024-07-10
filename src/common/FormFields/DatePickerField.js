@@ -25,20 +25,21 @@ function DatePickerField({
   minDate,
   value,
   onError,
-
+  slotProps,
+  maxDate,
   ...rest
 }) {
+  // console.log("error",error);
   return (
-    <div className="w-full">
+    <div className="w-full bg-white h-[38px] mt-[1px]">
       <FormControl className="w-full" sx={sx} size="small">
         <Controller
-          sx={{ width: "100%", height: "40px" }}
+          sx={{ width: "100%" }}
           name={name}
           control={control}
           defaultValue={defaultValue}
           render={({ field: { onChange, onBlur, value, ref } }) => (
             <LocalizationProvider dateAdapter={AdapterDateFns}>
-              {console.log("errorDate", error)}
               <DesktopDatePicker
                 label={label}
                 value={value}
@@ -49,6 +50,61 @@ function DatePickerField({
                 disabled={disabled}
                 disablePast={disablePast}
                 disableFuture={disableFuture}
+                maxDate={maxDate}
+                sx={{
+                  "& .css-1q3qg0t-MuiInputBase-root-MuiOutlinedInput-root": {
+                    height: "36px",
+                    fontSize: 14,
+                    width: "100%",
+                    borderColor: "#ffffff",
+                    overflow: "hidden",
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      height: "40px",
+                      borderColor: error !== undefined ? "#C84F4E" : "",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: error !== undefined ? "#C84F4E" : "",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: error !== undefined ? "#C84F4E" : "",
+                    },
+                  },
+                  "& .css-1pysi21-MuiFormLabel-root-MuiInputLabel-root": {
+                    top: "-2px",
+                    color: error !== undefined ? "#C84F4E" : "",
+                  },
+                  "&.css-1u52y74-MuiFormControl-root-MuiTextField-root ": {
+                    borderColor: error !== undefined ? "#C84F4E" : "",
+                  },
+                  "& .css-4jar7x": {
+                    height: "36px",
+                  },
+                  "& .css-wnl09l-MuiFormLabel-root-MuiInputLabel-root": {
+                    top: "-9px",
+                    // bottom: '10px'
+                  },
+                  "& .MuiInputBase-input": {
+                    fontSize: "14px",
+                    // color:"gray"
+                    color: error !== undefined && "#C84F4E",
+                  },
+                  "& .MuiInputLabel-root": {
+                    fontSize: "14px",
+                    color: error !== undefined && "#C84F4E",
+                  },
+                  "& .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input": {
+                    height: "0.4375em"
+                  },
+                  svg: {
+                    color: error !== undefined ? "#C84F4E" : "#0B83A5",
+                    height: 22,
+                    width: "100%",
+                    marginRight: "16px",
+                  },
+                }}
+                slotProps={slotProps}
                 renderInput={(params) => (
                   <TextField
                     onError={onError}
@@ -56,38 +112,15 @@ function DatePickerField({
                     {...params}
                     size="small"
                     fullWidth
+                    InputLabelProps={{
+                      style: {
+                        fontSize: "14px",
+                        position: "absolute",
+                        top: "-2px",
+                      },
+                    }}
                   />
                 )}
-                sx={{
-                  "& .css-1q3qg0t-MuiInputBase-root-MuiOutlinedInput-root": {
-                    height: "36px",
-                  },
-                  "& .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input": {
-                    fontSize: " 12px",
-                  },
-                  "& .css-1ayhp4g-MuiFormLabel-root-MuiInputLabel-root": {
-                    fontSize: " 12px",
-                    color: error?.type === "required" ? "#DC2626" : "#073763",
-                  },
-                  "& fieldset": {
-                    borderColor: error?.type === "required" ? "#DC2626" : "",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: error?.type === "required" ? "#DC2626" : "",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: error?.type === "required" ? "#DC2626" : "",
-                  },
-                  "& .css-i4bv87-MuiSvgIcon-root": {
-                    fontSize: " 22px",
-                    color: error?.type === "required" ? "#DC2626" : "#073763",
-                  },
-                  "& .css-wnl09l-MuiFormLabel-root-MuiInputLabel-root": {
-                    top: value === null ? "-8px" : "",
-                    fontSize: 14,
-                    color: error?.type === "required" ? "#DC2626" : "",
-                  },
-                }}
                 {...rest}
               />
             </LocalizationProvider>
